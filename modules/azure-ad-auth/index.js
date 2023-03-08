@@ -5,12 +5,7 @@ import AzureAuth from "react-native-azure-auth";
 
 function AzureADAuth() {
   const options = useContext(OptionsContext);
-  const {
-    styles,
-    azureTenant,
-    azureClientId,
-    azureRedirectUri
-  } = options;
+  const { styles, azureTenant, azureClientId, azureRedirectUri } = options;
   const [accessToken, setAccessToken] = React.useState(null);
   const [user, setUser] = React.useState(null);
 
@@ -37,7 +32,8 @@ function AzureADAuth() {
     }
   };
 
-  return <SafeAreaView style={styles?.safeArea}>
+  return (
+    <SafeAreaView style={styles?.safeArea}>
       <View style={styles?.MVfceqLO}>
 
           <View style={styles?.header}>
@@ -45,8 +41,8 @@ function AzureADAuth() {
           </View>
 
           <TouchableOpacity style={styles?.button} onPress={() => {
-        fetchData();
-      }}>
+            fetchData();
+          }}>
             <Text style={styles?.DjHOfaku}>Login with Azure AD</Text>
           </TouchableOpacity>
 
@@ -55,7 +51,8 @@ function AzureADAuth() {
             <Text style={styles?.consoleText}>{accessToken}</Text>
           </ScrollView>
       </View>
-    </SafeAreaView>;
+    </SafeAreaView>
+  );
 }
 
 export default {
